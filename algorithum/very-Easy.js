@@ -365,3 +365,22 @@ function sumDigits(n1) {
 // console.log(sumDigits(1000)) // 4
 
 // console.log(sumDigits(1)) // 1
+
+
+// -----------------------------------------------------------
+function multiplyByLength(arr) {
+    // return arr.map(ele => ele * arr.length)
+    let newArr = []
+    for(let i = 0 ; i < arr.length ; i++){
+      newArr.push(arr[i] * arr.length)
+    }
+    return newArr
+}
+
+// console.log(multiplyByLength([2, 3, 1, 0])) // [8, 12, 4, 0]
+
+// console.log(multiplyByLength([4, 1, 1])) // ([12, 3, 3])
+
+// console.log(multiplyByLength([1, 0, 3, 3, 7, 2, 1])) //  [7, 0, 21, 21, 49, 14, 7]
+
+// console.log(multiplyByLength([0])) // ([0])
