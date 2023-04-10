@@ -384,3 +384,19 @@ function multiplyByLength(arr) {
 // console.log(multiplyByLength([1, 0, 3, 3, 7, 2, 1])) //  [7, 0, 21, 21, 49, 14, 7]
 
 // console.log(multiplyByLength([0])) // ([0])
+
+
+// -----------------------------------------------------------
+function getDiscounts(arr, str) {
+    let newArr = [];
+    for(let i = 0 ; i < arr.length ; i++){
+        newArr.push(arr[i] * parseFloat(str) / 100)
+    }
+    return newArr
+}
+
+// console.log(getDiscounts([2, 4, 6, 11], "50%")) // [1, 2, 3, 5.5]
+
+// console.log(getDiscounts([10, 20, 40, 80], "75%")) // [7.5, 15, 30, 60]
+
+// console.log(getDiscounts([100], "45%")) // [45]
