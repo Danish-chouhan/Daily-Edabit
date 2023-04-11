@@ -400,3 +400,16 @@ function getDiscounts(arr, str) {
 // console.log(getDiscounts([10, 20, 40, 80], "75%")) // [7.5, 15, 30, 60]
 
 // console.log(getDiscounts([100], "45%")) // [45]
+
+// -----------------------------------------------------------
+// pending
+
+function middleEarth(arr) {
+
+}
+
+// console.log(middleEarth(["Frodo", "Sam", "Gandalf"])) // true
+
+// console.log(middleEarth(["Frodo", "Saruman", "Sam"])) // false
+
+// console.log(middleEarth(["Orc", "Sam", "Frodo", "Legolas"])) // true
