@@ -562,12 +562,12 @@ function voterResults(arr) {
     (acc, curr) => {
       if (curr.age >= 18 && curr.age <= 25) {
         acc.numYoungPeople++;
-        if(curr.voted){
+        if (curr.voted) {
           acc.numYoungVotes++;
         }
       } else if (curr.age >= 26 && curr.age <= 35) {
         acc.numMidsPeople++;
-        if(curr.voted){
+        if (curr.voted) {
           acc.numMidVotesPeople++;
         }
       } else if (curr.age >= 36 && curr.age <= 55) {
@@ -602,4 +602,85 @@ numOldsPeople: 4
 
 // ------------------------------------------------------
 
+//  functional composition is a dealer which deal its own result with onther function until the final function called
+
+function fn1(a) {
+  return a + a;
+}
+
+function fn2(a) {
+  return a + a;
+}
+function fn3(a) {
+  return a + a;
+}
+function fn4(a) {
+  return a + a;
+}
+
+let an1 = fn1(10);
+let an2 = fn2(an1);
+let an3 = fn3(an2);
+let an4 = fn4(an3);
+
+// console.log(an4);
+
 // ------------------------------------------------------
+
+// curying is a technice in functinal programing where we converts multiple argument in sequence of argument each time it will returns us a single argument;
+
+let curying = (a) => (b) => (c) => (d) => a + b + c + d;
+
+// console.log(curying(10)(20)(10)(10));
+
+// ---------------------------------------------------------
+
+// partial application is a technice where we create a new function to fix some arguments of existing function 
+
+let obj1 = {
+  fname: "Danish",
+  lname: " Chouhan",
+  fatherName : " Imran-chouhan"
+};
+
+let obj2 = {
+  fname : "Hamza",
+  lname : " chouhan",
+  fatherName : " Imran-Chouhan"
+}
+
+function partial(fname,lname,fatherName){
+  return fname + lname + fatherName
+}
+
+let call1 = partial.bind(obj1,obj1.fname)
+let call2 = partial.bind(obj2,obj2.fname)
+
+
+let calling1 = call1(obj1.lname,obj1.fatherName)
+let calling2 = call2(obj2.lname,obj2.fatherName)
+
+
+// console.log(calling1);
+// console.log(calling2);
+
+// ---------------------------------------------------------
+
+// closer is a combination of function of its laxixal envirment which can take acces of its outer functions value;
+
+function outerFn(a){
+  function innerFn(b){
+    return a + b
+  }
+  return innerFn
+}
+
+// console.log(outerFn(10)(20));
+
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+
