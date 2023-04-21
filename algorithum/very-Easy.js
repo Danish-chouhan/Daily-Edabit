@@ -29,3 +29,15 @@ function animals(chicken, cows, pigs) {
 // console.log(animals(1, 2, 3)) // 22
 
 // console.log(animals(5, 2, 8)) // 50
+
+// -----------------------------------------------------------
+function frames(n1, n2) {
+    return 60 * (n1 * n2);
+  }
+  
+  // console.log(frames(1, 1)) // 60
+  
+  // console.log(frames(10, 1)) // 600
+  
+  // console.log(frames(10, 25)) // 15000
+  
