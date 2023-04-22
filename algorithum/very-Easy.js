@@ -41,3 +41,18 @@ function frames(n1, n2) {
   
   // console.log(frames(10, 25)) // 15000
   
+  // -----------------------------------------------------------
+  
+  function makesTen(a, b) {
+    if (a + b === 10 || a === 10 || b === 10) {
+      return true;
+    }
+    return false;
+  }
+  
+  // console.log(makesTen(9, 10)) // true
+  
+  // console.log(makesTen(9, 9)) // false
+  
+  // console.log(makesTen(1, 9)) // true
+  
