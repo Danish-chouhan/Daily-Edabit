@@ -55,4 +55,18 @@ function frames(n1, n2) {
   // console.log(makesTen(9, 9)) // false
   
   // console.log(makesTen(1, 9)) // true
+
+  // -----------------------------------------------------------
   
+  function acceptIntoMovie(age, isSupervised) {
+    if (age >= 15 || isSupervised === true) {
+      return true;
+    }
+    return false;
+  }
+  
+  // console.log(acceptIntoMovie(14, true)) // true
+  
+  // console.log(acceptIntoMovie(14, false)) // false
+  
+  // console.log(acceptIntoMovie(16, false)) // true
