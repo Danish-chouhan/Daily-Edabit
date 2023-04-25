@@ -70,3 +70,14 @@ function frames(n1, n2) {
   // console.log(acceptIntoMovie(14, false)) // false
   
   // console.log(acceptIntoMovie(16, false)) // true
+  
+  // -----------------------------------------------------------
+  function futurePeople(a, b) {
+    return a + b * 360;
+  }
+  
+  // console.log(futurePeople(256, 2)) // 976
+  
+  // console.log(futurePeople(3248, 6)) // 5408
+  
+  // console.log(futurePeople(5240, 3)) // 6320
