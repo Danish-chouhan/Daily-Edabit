@@ -81,3 +81,15 @@ function frames(n1, n2) {
   // console.log(futurePeople(3248, 6)) // 5408
   
   // console.log(futurePeople(5240, 3)) // 6320
+
+// -----------------------------------------------------------
+
+// pending
+
+function leapYear(n) {}
+
+// console.log(leapYear(2020)) // true
+
+// console.log(leapYear(2021)) // false
+
+// console.log(leapYear(1968)) // true
