@@ -93,3 +93,15 @@ function leapYear(n) {}
 // console.log(leapYear(2021)) // false
 
 // console.log(leapYear(1968)) // true
+
+// -----------------------------------------------------------
+
+function stackBoxes(n) {
+    return n * n;
+  }
+  
+  // console.log(stackBoxes(1)) // 1
+  
+  // console.log(stackBoxes(2)) // 4
+  
+  // console.log(stackBoxes(0)) // 0
