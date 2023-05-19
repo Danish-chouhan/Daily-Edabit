@@ -105,3 +105,18 @@ function stackBoxes(n) {
   // console.log(stackBoxes(2)) // 4
   
   // console.log(stackBoxes(0)) // 0
+
+  // -----------------------------------------------------------
+  function areaShape(n1, n2, str) {
+    if (str === "triangle") {
+      return 0.5 * (n1 * n2);
+    } else if (str === "parallelogram") {
+      return n1 * n2;
+    }
+  }
+  
+  // console.log(areaShape(2, 3, "triangle")) // 3
+  
+  // console.log(areaShape(8, 6, "parallelogram")) // 48
+  
+  // console.log(areaShape(2.9, 1.3,"parallelogram")) // 1
