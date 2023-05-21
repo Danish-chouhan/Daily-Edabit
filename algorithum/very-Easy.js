@@ -120,3 +120,15 @@ function stackBoxes(n) {
   // console.log(areaShape(8, 6, "parallelogram")) // 48
   
   // console.log(areaShape(2.9, 1.3,"parallelogram")) // 1
+
+    
+  // -----------------------------------------------------------
+  
+  function carsNeeded(n) {
+    return n % 4;
+  }
+  // console.log(carsNeeded(5)) // 1
+  
+  // console.log(carsNeeded(11)) // 3
+  
+  // console.log(carsNeeded(0)) // 0
