@@ -146,3 +146,12 @@ function stackBoxes(n) {
   
   // console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])) // ["number", "string", "string", "object", "object", "boolean", "number"]
   
+  // -----------------------------------------------------------
+  function stutter(str) {
+    return `${str.slice(0, 2)}... ${str.slice(0, 2)}... ${str}?`;
+  }
+  // console.log(stutter("incredible")) // "in... in... incredible?"
+  
+  // console.log(stutter("enthusiastic")) // "en... en... enthusiastic?"
+  
+  // console.log(stutter("outstanding")) // "ou... ou... outstanding?"
