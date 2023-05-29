@@ -155,3 +155,17 @@ function stackBoxes(n) {
   // console.log(stutter("enthusiastic")) // "en... en... enthusiastic?"
   
   // console.log(stutter("outstanding")) // "ou... ou... outstanding?"
+
+    
+  // -----------------------------------------------------------
+  function ctoa(str) {
+    return str.charCodeAt(str);
+  }
+  
+  // console.log(ctoa("A")) // 65
+  
+  // console.log(ctoa("m")) // 109
+  
+  // console.log(ctoa("[")) // 91
+  
+  // console.log(ctoa("\\")) // 92
