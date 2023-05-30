@@ -169,3 +169,17 @@ function stackBoxes(n) {
   // console.log(ctoa("[")) // 91
   
   // console.log(ctoa("\\")) // 92
+
+    
+  // -----------------------------------------------------------
+  
+  // panding
+  
+  function addBinary(n1, n2) {}
+  
+  // console.log(addBinary(1, 1)) // "10"
+  
+  // console.log(addBinary(1, 2)) // "11"
+  
+  // console.log(addBinary(4, 5)) // "1001"
+  
