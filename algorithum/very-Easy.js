@@ -183,3 +183,14 @@ function stackBoxes(n) {
   
   // console.log(addBinary(4, 5)) // "1001"
   
+  // -----------------------------------------------------------
+  
+  function totalCups(n) {
+    return Number.parseInt((n += n / 6));
+  }
+  
+  // console.log(totalCups(6)) // 7
+  
+  // console.log(totalCups(12)) // 14
+  
+  // console.log(totalCups(213)) // 248
