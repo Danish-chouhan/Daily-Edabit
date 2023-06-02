@@ -194,3 +194,21 @@ function stackBoxes(n) {
   // console.log(totalCups(12)) // 14
   
   // console.log(totalCups(213)) // 248
+
+    
+  // -----------------------------------------------------------
+  function countDs(str) {
+    let sum = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === "D" || str[i] === "d") {
+        sum += 1;
+      }
+    }
+    return sum;
+  }
+  
+  // console.log(countDs("My friend Dylan got distracted in school.")) // 4
+  
+  // console.log(countDs("Debris was scattered all over the yard.")) // 3
+  
+  // console.log(countDs("The rodents hibernated in their den.")) // 3
