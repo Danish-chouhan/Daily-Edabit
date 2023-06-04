@@ -212,3 +212,24 @@ function stackBoxes(n) {
   // console.log(countDs("Debris was scattered all over the yard.")) // 3
   
   // console.log(countDs("The rodents hibernated in their den.")) // 3
+
+  
+  // -----------------------------------------------------------
+  function evenOrOdd(arr) {
+    let sum = arr.reduce((acc, curr) => acc + curr, 0);
+    if (sum === 0) {
+      return "even";
+    } else if (sum % 2 === 0) {
+      return "even";
+    } else {
+      return "odd";
+    }
+  }
+  
+  // console.log(evenOrOdd([0])) // "even"
+  
+  // console.log(evenOrOdd([1])) // "odd"
+  
+  // console.log(evenOrOdd([])) // "even"
+  
+  // console.log(evenOrOdd([0, 1, 5])) // "even"
