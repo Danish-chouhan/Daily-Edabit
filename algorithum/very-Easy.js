@@ -233,3 +233,14 @@ function stackBoxes(n) {
   // console.log(evenOrOdd([])) // "even"
   
   // console.log(evenOrOdd([0, 1, 5])) // "even"
+  
+  // -----------------------------------------------------------
+  // pending
+  
+  function programmers(n1, n2, n3) {}
+  
+  // console.log(programmers(147, 33, 526)) // 493
+  
+  // console.log(programmers(33, 72, 74)) // 41
+  
+  // console.log(programmers(1, 5, 9)) // 8
