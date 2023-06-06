@@ -282,3 +282,16 @@ function stackBoxes(n) {
   // console.log(nTablesPlusOne(1)) // "2,3,4,5,6,7,8,9,10,11"
   
   // console.log(nTablesPlusOne(3)) // "4,7,10,13,16,19,22,25,28,31"
+  
+  // -----------------------------------------------------------
+  // pending
+  
+  function ageDifference(n1, n2) {}
+  
+  // console.log(ageDifference(36, 7)) // 22
+  // 22 years from now, the father will be 58 years old and his son will be 29 years old.
+  
+  // console.log(ageDifference(55, 30)) // 5
+  // 5 years ago, the father was 50 years old and his son was 25 years old.
+  
+  // console.log(ageDifference(42, 21)) // 0
