@@ -244,3 +244,14 @@ function stackBoxes(n) {
   // console.log(programmers(33, 72, 74)) // 41
   
   // console.log(programmers(1, 5, 9)) // 8
+  
+  // -----------------------------------------------------------
+  // pending
+  
+  function areaOfHexagon(n1) {}
+  
+  // console.log(areaOfHexagon(1)) // 2.6
+  
+  // console.log(areaOfHexagon(2)) // 10.4
+  
+  // console.log(areaOfHexagon(3)) // 23.4
