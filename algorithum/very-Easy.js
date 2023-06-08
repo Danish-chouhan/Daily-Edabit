@@ -255,3 +255,20 @@ function stackBoxes(n) {
   // console.log(areaOfHexagon(2)) // 10.4
   
   // console.log(areaOfHexagon(3)) // 23.4
+
+  // -----------------------------------------------------------
+  
+  function sumCubes(n1) {
+    let sum = 0;
+    for (let i = 1; i <= n1; i++) {
+      sum += i ** 3;
+    }
+    return sum;
+  }
+  
+  // console.log(sumCubes(7)) // 784
+  
+  // console.log(sumCubes(8)) // 1296
+  
+  // console.log(sumCubes(9)) // 2025
+  
