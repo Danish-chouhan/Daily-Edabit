@@ -272,3 +272,13 @@ function stackBoxes(n) {
   
   // console.log(sumCubes(9)) // 2025
   
+  // -----------------------------------------------------------
+  // pending
+  
+  function nTablesPlusOne(n) {}
+  
+  // console.log(nTablesPlusOne(7)) // "8,15,22,29,36,43,50,57,64,71"
+  
+  // console.log(nTablesPlusOne(1)) // "2,3,4,5,6,7,8,9,10,11"
+  
+  // console.log(nTablesPlusOne(3)) // "4,7,10,13,16,19,22,25,28,31"
