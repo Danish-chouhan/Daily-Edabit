@@ -295,3 +295,22 @@ function stackBoxes(n) {
   // 5 years ago, the father was 50 years old and his son was 25 years old.
   
   // console.log(ageDifference(42, 21)) // 0
+    
+  // -----------------------------------------------------------
+  
+  function largestNumbers(n1, arr) {
+    let sorting = arr.sort((a, b) => a - b);
+    let newArr = [];
+    for (let i = sorting.length - n1; i < sorting.length; i++) {
+      newArr.push(sorting[i]);
+    }
+    return newArr;
+  }
+  
+  // console.log(largestNumbers(2, [4, 3, 2, 1])) // [3, 4]
+  
+  // console.log(largestNumbers(1, [7, 19, 4, 2])) // [19]
+  
+  // console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16])) // [16, 18, 57]
+  
+  // console.log(largestNumbers(0, [1, 3, 4, 2])) // []
