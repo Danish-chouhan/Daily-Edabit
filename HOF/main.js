@@ -1,5 +1,3 @@
-// pending becouse i dont know how to do this with HOF
-
 function arrayValuesTypes(arr) {
   return arr.map((ele) => typeof ele);
 }
@@ -10,16 +8,11 @@ function arrayValuesTypes(arr) {
 
 // ---------------------------------------------
 
-// pending for some reason
-
 function oddSum(arr) {
-  let sum = 0;
   let newArr = [];
-  for (let i = 0; i < arr.length - 1; i++) {
-    sum += arr[i];
-    let target = sum % 2 === 0 ? true : false;
-    console.log(sum);
-    newArr.push(target);
+  for (let i = 0; i < arr.length; i++) {
+    let sum = arr[i] + arr[i + 1];
+    newArr.push(sum % 2 === 0);
   }
   return newArr;
 }
@@ -29,8 +22,6 @@ function oddSum(arr) {
 // console.log(oddSum([1, 2, 3, 4, 5, 6])); // [false, false, false, false, false]
 
 // -----------------------------------------------
-
-// pending becouse the ans is not from HOF
 
 function addEnding(arr, str) {
   // let newArr = []
@@ -126,30 +117,231 @@ function getExtension(arr) {
 // console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"])) // ["rb", "cpp", "py", "js"]
 
 // -----------------------------------------
-// pending
 
-function minimumRemovals(arr) {}
+function minimumRemovals(arr) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++) {
+    num += arr[i]
+  }
+  if(num % 2 === 0){
+    return 0
+  }else{
+    return 1
+  }
+}
 
-// minimumRemovals([1, 2, 3, 4, 5])) // 1
-
-// minimumRemovals([5, 7, 9, 11])) // 0
-
-// minimumRemovals([5, 7, 9, 12])) // 1
+// console.log(minimumRemovals([1, 2, 3, 4, 5])); // 1
+// console.log(minimumRemovals([5, 7, 9, 11])); // 0
+// console.log(minimumRemovals([5, 7, 9, 12])); // 1
 
 // ----------------------------------------
 
 function whichIsLarger(f, g) {
-  let a = f()
-  let b = g()
-  if(a > b){
-    return "f"
-  }else if(a < b){
-    return "g"
-  }else{
-    return "neither"
+  let a = f();
+  let b = g();
+  if (a > b) {
+    return "f";
+  } else if (a < b) {
+    return "g";
+  } else {
+    return "neither";
   }
 }
 
 // console.log(whichIsLarger(() => 5,() => 10)); // "g"
 // console.log(whichIsLarger(() => 25,() => 25 )); // "neither"
 // console.log(whichIsLarger(() => 505050,() => 5050)); // "f"
+
+// -----------------------------------------
+
+function asciiCapitalize(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      newStr += str[i].toUpperCase();
+    } else {
+      newStr += str[i].toLowerCase();
+    }
+  }
+  return newStr;
+}
+
+// console.log(asciiCapitalize("to be or not to be!")) // "To Be oR NoT To Be!"
+// console.log(asciiCapitalize("THE LITTLE MERMAID")) // "THe LiTTLe meRmaiD"
+// console.log(asciiCapitalize("Oh what a beautiful morning.")) // "oH wHaT a BeauTiFuL moRNiNg."
+
+// ----------------------------------------
+
+function asciiCapitalize(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str.charCodeAt(i) % 2 === 0) {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i].toLowerCase();
+    }
+  }
+  return result;
+}
+
+// console.log(asciiCapitalize("to be or not to be!")); // "To Be oR NoT To Be!"
+// console.log(asciiCapitalize("THE LITTLE MERMAID")); // "THe LiTTLe meRmaiD"
+// console.log(asciiCapitalize("Oh what a beautiful morning.")); // "oH wHaT a BeauTiFuL moRNiNg."
+
+// -------------------------------------
+
+function makePlusFunction(baseNum) {
+  return function (newArg) {
+    return baseNum + newArg;
+  };
+}
+
+// Calling makePlusFunction(5) returns a new function that takes an input,
+// and returns the result when adding 5 to it.
+
+const plusFive = makePlusFunction(5);
+// console.log(plusFive(2)) // 7
+// console.log(plusFive(-8)) // -3
+
+// Calling makePlusFunction(10) returns a new function that takes an input,
+// and returns the result when adding 10 to it.
+
+const plusTen = makePlusFunction(10);
+// console.log(plusTen(0)) // 10
+// console.log(plusTen(188)) // 198
+// console.log(plusFive(plusTen(0))) // 15
+
+// ------------------------------------
+
+function add_suffix(str1) {
+  return function (str2) {
+    return str2 + str1;
+  };
+}
+
+add_ly = add_suffix("ly");
+
+// console.log(add_ly("hopeless")) // "hopelessly"
+// console.log(add_ly("total")) // "totally"
+
+add_less = add_suffix("less");
+
+// console.log(add_less("fear")) // "fearless"
+// console.log(add_less("ruth")) // "ruthless"
+
+// --------------------------------------
+
+function add(n1) {
+  return function (n2) {
+    return n1 + n2;
+  };
+}
+// console.log(add(10)(20)) // 30
+// console.log(add(0)(20)) // 20
+// console.log(add(-30)(80)) // 50
+
+// --------------------------------------
+
+function addsNum(n1) {
+  return function (n2) {
+    return n1 + n2;
+  };
+}
+
+const adds1 = addsNum(1);
+
+// console.log(adds1(3)) // 4
+// console.log(adds1(5.7)) // 6.7
+
+const adds10 = addsNum(10);
+
+// console.log(adds10(44)) // 54
+// console.log(adds10(20)) // 30
+
+// -------------------------------------------
+
+function isSpecialArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 === 0 && arr[i] % 2 !== 0) {
+      return false;
+    }
+    if (arr[i] % 2 === 0 && i % 2 !== 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])); // true
+// Even indices: [2, 4, 6, 6]; Odd indices: [7, 9, 1, 3]
+// console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3])); // false
+// Index 2 has an odd number 9.
+// console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3])); // false
+// Index 3 has an even number 8.
+
+// -------------------------------------------
+
+function specialReverse(str, char) {
+  return str
+    .split(" ")
+    .map((ele) => {
+      if (ele.includes(char)) {
+        return ele.split("").reverse().join("");
+      } else {
+        return ele;
+      }
+    })
+    .join(" ");
+}
+
+// console.log(specialReverse("word searches are super fun", "s")) // "word sehcraes are repus fun"
+// console.log(specialReverse("first man to walk on the moon", "m")) // "first nam to walk on the noom"
+// console.log(specialReverse("peter piper picked pickled peppers", "p")) // "retep repip dekcip delkcip sreppep"
+
+// ---------------------------------------------
+
+// pending
+
+function warOfNumbers(arr) {}
+
+// console.log(warOfNumbers([2, 8, 7, 5])) // 2
+// 2 + 8 = 10
+// 7 + 5 = 12
+// 12 is larger than 10
+// So we return 12 - 10 = 2
+// console.log(warOfNumbers([12, 90, 75])) // 27
+// console.log(warOfNumbers([5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243])) // 168
+
+// --------------------------------------------
+
+// pending
+
+function transformUpvotes(str) {
+  let a = str.split(" ").map((ele) => {
+    if (ele.includes("k")) {
+      let a = ele.split("");
+      return a;
+    } else {
+      return ele;
+    }
+  });
+  let newStr = "";
+  let newArr = [];
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === "k") {
+      newStr += "00";
+      newArr.push(newStr);
+    } else {
+      newStr += a[i];
+      newArr.push(newStr);
+    }
+  }
+  return newArr.join("");
+}
+
+// console.log(transformUpvotes("6.8k 13.5k")) // [6800, 13500]
+// console.log(transformUpvotes("5.5k 8.9k 32")) // [5500, 8900, 32]
+// console.log(transformUpvotes("20.3k 3.8k 7.7k 992")) // [20300, 3800, 7700, 992]
+
+// --------------------------------------------------
+
