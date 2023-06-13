@@ -177,21 +177,21 @@ function product(a, b) {
 // ------------------------------------------
 
 const magic = {
-  replace: function(str,find,replace){
-    return str.replace(find,replace)
+  replace: function (str, find, replace) {
+    return str.replace(find, replace);
   },
-  length: function(str){
-    return str.length
+  length: function (str) {
+    return str.length;
   },
-  trim:function(str){
-    return str.trim()
+  trim: function (str) {
+    return str.trim();
   },
-  normalize:function(str,form){
-    return str.normalize(form)
+  normalize: function (str, form) {
+    return str.normalize(form);
   },
-  slice:function(arr,num1,num2){
-    return arr.slice(num1,num2)
-  }
+  slice: function (arr, num1, num2) {
+    return arr.slice(num1, num2);
+  },
 };
 
 // console.log(magic.replace("azerty", "a", "A")); // "Azerty"
@@ -224,3 +224,95 @@ const magic = {
 
 // -------------------------------------------------
 
+// pending
+
+function filterUnique() {}
+
+// console.log(filterUnique(["abb", "abc", "abcdb", "aea", "bbb"])) // ["abc"]
+// // "b" occurs in "abb" more than once, "b" occurs in "abcdb" more than once, etc.
+// console.log(filterUnique(["88", "999", "989", "9988", "9898"])) // []
+// console.log(filterUnique(["ABCDE", "DDEB", "BED", "CCA", "BAC"])) // ["ABCDE", "BED", "BAC"]
+
+// ------------------------------------------------
+
+// pending
+
+function group(arr, num) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i += num) {
+    newArr.push(arr.slice(i, i + num));
+  }
+  return newArr;
+}
+
+// console.log(group([1, 2, 3, 4], 2)) // [[1, 3], [2, 4]]
+// console.log(group([1, 2, 3, 4, 5, 6, 7], 4)) // [[1, 3, 5, 7], [2, 4, 6]]
+// console.log(group([1, 2, 3, 4, 5], 1)) // [[1], [2], [3], [4], [5]]
+// console.log(group([1, 2, 3, 4, 5, 6], 4)) // [[1, 3, 5], [2, 4, 6]]
+
+// ------------------------------------------------
+
+function letterCounter(arr, total) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] === total) {
+        sum++;
+      }
+    }
+  }
+  return sum;
+}
+
+// console.log(
+//   letterCounter(
+//     [
+//       ["D", "E", "Y", "H", "A", "D"],
+//       ["C", "B", "Z", "Y", "J", "K"],
+//       ["D", "B", "C", "A", "M", "N"],
+//       ["F", "G", "G", "R", "S", "R"],
+//       ["V", "X", "H", "A", "S", "S"],
+//     ],
+//     "D"
+//   )
+// ); // 3
+
+// "D" shows up 3 times: twice in the first row, once in the third row.
+
+// console.log(
+//   letterCounter(
+//     [
+//       ["D", "E", "Y", "H", "A", "D"],
+//       ["C", "B", "Z", "Y", "J", "K"],
+//       ["D", "B", "C", "A", "M", "N"],
+//       ["F", "G", "G", "R", "S", "R"],
+//       ["V", "X", "H", "A", "S", "S"],
+//     ],
+//     "H"
+//   )
+// ); // 2
+
+
+// -------------------------------------
+
+// pending
+
+function moveToEnd(arr,num){
+
+}
+
+console.log(moveToEnd([1, 3, 2, 4, 4, 1], 1)) // [3, 2, 4, 4, 1, 1]
+// Move all the 1s to the end of the array.
+console.log(moveToEnd([7, 8, 9, 1, 2, 3, 4], 9)) // [7, 8, 1, 2, 3, 4, 9]
+console.log(moveToEnd(["a", "a", "a", "b"], "a")) // ["b", "a", "a", "a"]
+
+// -------------------------------------
+
+function magnitude(arr){
+  return Math.sqrt(arr.map(ele => ele ** 2).reduce((acc,curr)=> acc + curr,0))
+}
+
+// console.log(magnitude([3, 4])) // 5
+// console.log(magnitude([0, 0, -10])) // 10
+// console.log(magnitude([])) // 0
+// console.log(magnitude([2, 3, 6, 1, 8] )) // 10.677078252031311
