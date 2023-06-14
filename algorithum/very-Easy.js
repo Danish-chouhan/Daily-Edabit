@@ -314,3 +314,24 @@ function stackBoxes(n) {
   // console.log(largestNumbers(3, [14, 12, 57, 11, 18, 16])) // [16, 18, 57]
   
   // console.log(largestNumbers(0, [1, 3, 4, 2])) // []
+  
+  // -----------------------------------------------------------
+  function justAnotherSumProblem(n1, n2) {
+    let sum = 0;
+    if (n1 < 0) {
+      for (let i = -n1; i > n2; i--) {
+        sum += -i;
+      }
+      return sum;
+    }
+    for (let i = n2; i <= n1; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+  
+  // console.log(justAnotherSumProblem(-10, 1)); // -54
+  
+  // console.log(justAnotherSumProblem(-20, 5)); // -195
+  
+  // console.log(justAnotherSumProblem(90, 45)); // 3105
