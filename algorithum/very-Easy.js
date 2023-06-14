@@ -335,3 +335,22 @@ function stackBoxes(n) {
   // console.log(justAnotherSumProblem(-20, 5)); // -195
   
   // console.log(justAnotherSumProblem(90, 45)); // 3105
+
+    
+  // -----------------------------------------------------------
+  function centuryFromYear(n1) {
+    if(n1 >= 1801 && n1<= 1900){
+        return 19
+    }else if(n1 >= 1901 && n1 <= 2000){
+        return 20
+    }else if(n1 >= 2001 && n1 <= 3000){
+        return 21
+    }
+}
+
+// console.log(centuryFromYear(2005)) // 21
+
+// console.log(centuryFromYear(1950)) // 20
+
+// console.log(centuryFromYear(1900)) // 19
+
