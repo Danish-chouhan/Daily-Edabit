@@ -121,12 +121,12 @@ function getExtension(arr) {
 function minimumRemovals(arr) {
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
-    num += arr[i]
+    num += arr[i];
   }
-  if(num % 2 === 0){
-    return 0
-  }else{
-    return 1
+  if (num % 2 === 0) {
+    return 0;
+  } else {
+    return 1;
   }
 }
 
@@ -302,7 +302,18 @@ function specialReverse(str, char) {
 
 // pending
 
-function warOfNumbers(arr) {}
+function warOfNumbers(arr) {
+  let even = 0;
+  let odd = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      even += arr[i];
+    } else {
+      odd += arr[i];
+    }
+  }
+  return Math.abs(even - odd);
+}
 
 // console.log(warOfNumbers([2, 8, 7, 5])) // 2
 // 2 + 8 = 10
@@ -345,3 +356,185 @@ function transformUpvotes(str) {
 
 // --------------------------------------------------
 
+function letterCounter(arr, str) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] === str) {
+        sum++;
+      }
+    }
+  }
+  return sum;
+}
+
+// console.log(
+//   letterCounter(
+//     [
+//       ["D", "E", "Y", "H", "A", "D"],
+//       ["C", "B", "Z", "Y", "J", "K"],
+//       ["D", "B", "C", "A", "M", "N"],
+//       ["F", "G", "G", "R", "S", "R"],
+//       ["V", "X", "H", "A", "S", "S"],
+//     ],
+//     "D"
+//   )
+// ); // 3
+
+// // "D" shows up 3 times: twice in the first row, once in the third row.
+// console.log(
+//   letterCounter(
+//     [
+//       ["D", "E", "Y", "H", "A", "D"],
+//       ["C", "B", "Z", "Y", "J", "K"],
+//       ["D", "B", "C", "A", "M", "N"],
+//       ["F", "G", "G", "R", "S", "R"],
+//       ["V", "X", "H", "A", "S", "S"],
+//     ],
+//     "H"
+//   )
+// ); // 2
+
+// ---------------------------------------------------------------------
+
+function moveToEnd(arr, num) {
+  let newArr = [];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      sum += 1;
+    } else {
+      newArr.push(arr[i]);
+    }
+  }
+  let filling = Array(sum).fill(num);
+  return [...newArr, ...filling];
+}
+
+// console.log(moveToEnd([1, 3, 2, 4, 4, 1], 1)) // [3, 2, 4, 4, 1, 1]
+// // Move all the 1s to the end of the array.
+// console.log(moveToEnd([7, 8, 9, 1, 2, 3, 4], 9)) // [7, 8, 1, 2, 3, 4, 9]
+// console.log(moveToEnd(["a", "a", "a", "b"], "a")) // ["b", "a", "a", "a"]
+
+// -----------------------------------------------------------------------
+
+function magnitude(arr) {
+  return Math.sqrt(
+    arr.map((ele) => ele ** 2).reduce((curr, ele) => curr + ele, 0)
+  );
+}
+
+// console.log(magnitude([3, 4])); // 5
+// console.log(magnitude([0, 0, -10])); // 10
+// console.log(magnitude([])); // 0
+// console.log(magnitude([2, 3, 6, 1, 8])); // 10.677078252031311
+
+// ------------------------------------------------------------------------
+
+function sumOddAndEven(arr) {
+  let odd = 0;
+  let even = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      even += arr[i];
+    } else {
+      odd += arr[i];
+    }
+  }
+  return [even, odd];
+}
+
+// console.log(sumOddAndEven([1, 2, 3, 4, 5, 6])) // [12, 9]
+// // 2 + 4 + 6 = 12 and 1 + 3 + 5 = 9
+// console.log(sumOddAndEven([-1, -2, -3, -4, -5, -6])) // [-12, -9])
+// console.log(sumOddAndEven([0, 0])) // [0, 0])
+
+// ------------------------------------------------------------------------
+
+// pending
+
+function puzzlePieces(arr1, arr2) {
+  let index = 0;
+  return arr1[index] + arr2[index];
+}
+
+// console.log(puzzlePieces([1, 2, 3, 4], [4, 3, 2, 1])); // true
+// console.log(puzzlePieces([1, 8, 5, 0, -1, 7], [0, -7, -4, 1, 2, -6])); // true
+// console.log(puzzlePieces([1, 2], [-1, -1])); // false
+// console.log(puzzlePieces([9, 8, 7], [7, 8, 9, 10])); // false
+
+// ------------------------------------------------------------------------
+
+function billSplit(arr1, arr2) {}
+
+// billSplit(["S", "N", "S", "S"], [13, 18, 15, 4]) ➞ [41, 9]
+// // Since:
+// // You pay: [13, 9, 15, 4] = 41
+// // Friend pays: [0, 9, 0, 0] = 9
+// // Examples
+// billSplit(["N", "S", "N"], [10, 10, 20]) ➞ [25, 15]
+// // You pay for half of both "N" dishes (5 + 10) and entirely pay for the "S" dish (10).
+// billSplit(["N", "N"], [10, 10]) ➞ [10, 10]
+// billSplit(["S", "N"], [41, 10]) ➞ [46, 5]
+
+// ------------------------------------------------------------------------
+
+function isShifted(arr1, arr2) {}
+
+// isShifted([1, 2, 3], [2, 3, 4]) ➞ true
+// // Each element is shifted +1
+
+// isShifted([1, 2, 3], [-9, -8, -7]) ➞ true
+// // Each element is shifted -10
+
+// isMultiplied([1, 2, 3], [10, 20, 30]) ➞ true
+// // Each element is multiplied by 10
+
+// isMultiplied([1, 2, 3], [-0.5, -1, -1.5]) ➞ true
+// // Each element is multiplied by -1/2
+
+// isMultiplied([1, 2, 3], [0, 0, 0]) ➞ true
+// // Each element is multiplied by 0
+
+// --------------------------------------------------------------------------
+
+function toObj(arr) {
+  return arr.map((ele) => ({ [ele]: ele.charCodeAt(0) }));
+}
+
+// console.log(toObj(["a", "b", "c"])) // [{a: 97}, {b: 98}, {c: 99}]
+// console.log(toObj(["z"])) // [{z: 122}]
+// console.log(toObj([])) // []
+
+// ---------------------------------------------------------------------------
+// pending
+function validateSubsets(arr, set) {}
+
+// console.log(validateSubsets([[1, 2], [2, 3], [1, 3]], [1, 2, 3])) // true
+// console.log(validateSubsets([[1, 2, 3], [2], [3], []], [1, 2, 3])) // true
+// console.log(validateSubsets([[1, 2], [2, 3], [1, 4]], [1, 2, 3])) // false
+// console.log(validateSubsets([[1, 2, 3, 4]], [1, 2, 3])) // false
+
+// --------------------------------------------------------------------------
+// pending
+
+function neighboring(str) {}
+
+// console.log(neighboring("aba")) // true
+// console.log(neighboring("abcdedcba")) // true
+// console.log(neighboring("efghihfe")) // false
+// console.log(neighboring("abc")) // true
+// console.log(neighboring("qrstuv")) // true
+// console.log(neighboring("mnopqrstsrqponm")) // false
+
+// -----------------------------------------------------------------------------
+// pending
+
+function lambdaDepth() {}
+
+// console.log(lambdaDepth(0)) // "edabit"
+// console.log(lambdaDepth(1)()) // "edabit"
+// console.log(lambdaDepth(2)()()) // "edabit"
+// console.log(typeof lambdaDepth(2)()) // "function"
+
+// -----------------------------------------------------------------------------

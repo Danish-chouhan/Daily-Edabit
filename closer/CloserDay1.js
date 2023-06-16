@@ -137,23 +137,21 @@ function reverseImage(arr) {
 
 // -------------------------------------------
 
-// pending
-
 function accumulatingArray(arr) {
-  let sum = 0;
   let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    newArr.push(sum);
+  if (arr.length < 1) return [];
+  newArr.push(arr[0]);
+  for (let i = 1; i < arr.length; i++) {
+    newArr.push(arr[i] + newArr[newArr.length - 1]);
   }
   return newArr;
 }
 
-// console.log(accumulatingArray([1, 2, 3, 4])) // [1, 3, 6, 10]
+// console.log(accumulatingArray([1, 2, 3, 4])); // [1, 3, 6, 10]
 // // [1, 3, 6, 10] can be written as  [1, 1 + 2, 1 + 2 + 3, 1 + 2 + 3 + 4]
-// console.log(accumulatingArray([1, 5, 7])) // [1, 6, 13]
-// console.log(accumulatingArray([1, 0, 1, 0, 1])) // [1, 1, 2, 2, 3]
-// console.log(accumulatingArray([])) // []
+// console.log(accumulatingArray([1, 5, 7])); // [1, 6, 13]
+// console.log(accumulatingArray([1, 0, 1, 0, 1])); // [1, 1, 2, 2, 3]
+// console.log(accumulatingArray([])); // []
 
 // -------------------------------------------
 
@@ -204,51 +202,74 @@ const magic = {
 
 // pending
 
-// f1 = _ => "hello"
-// // f1() ➞ "hello"
+f1 = (_) => "hello";
+// f1() ➞ "hello"
 
-// f2 = _ => _ => "edabit"
-// // f2()() ➞ "edabit"
+f2 = (_) => (_) => "edabit";
+// f2()() ➞ "edabit"
 
-// f3 = _ => _ => _ => "user"
-// // f3()()() ➞ "user"
+f3 = (_) => (_) => (_) => "user";
+// f3()()() ➞ "user"
 
-// funcSort([f2, f3, f1]) ➞ [f1, f2, f3]
+// console.log(funcSort([f2, f3, f1]) )// [f1, f2, f3]
 // // [f2, f3, f1] ➞ [2, 3, 1] ➞ [1, 2, 3] ➞ [f1, f2, f3]
 
-// funcSort([f1, f2, f3]) ➞ [f1, f2, f3]
+// console.log(funcSort([f1, f2, f3])) // [f1, f2, f3]
 // // [f1, f2, f3] ➞ [1, 2, 3] ➞ [1, 2, 3] ➞ [f1, f2, f3]
 
-// funcSort([f2, "func"]) ➞ ["func", f2]
-// // [f2, "func"] ➞ [2, 0] ➞ [0, 2] ➞ ["func", f2]
+// console.log(funcSort([f2, "func"])) // ["func", f2]
+// [f2, "func"] ➞ [2, 0] ➞ [0, 2] ➞ ["func", f2]
 
 // -------------------------------------------------
 
 // pending
 
-function filterUnique() {}
+function filterUnique(arr) {
+  return arr.reduce((acc, val) => {
+    if (filterStr(val) === true) {
+      acc.push(val);
+    }
+    return acc;
+  }, []);
+}
+
+function filterStr(str) {
+  const obj = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in obj) {
+      obj[str[i]] += 1;
+    } else {
+      obj[str[i]] = 1;
+    }
+  }
+  return Math.max(...Object.values(obj)) > 1;
+}
 
 // console.log(filterUnique(["abb", "abc", "abcdb", "aea", "bbb"])) // ["abc"]
-// // "b" occurs in "abb" more than once, "b" occurs in "abcdb" more than once, etc.
+// // // "b" occurs in "abb" more than once, "b" occurs in "abcdb" more than once, etc.
 // console.log(filterUnique(["88", "999", "989", "9988", "9898"])) // []
 // console.log(filterUnique(["ABCDE", "DDEB", "BED", "CCA", "BAC"])) // ["ABCDE", "BED", "BAC"]
 
 // ------------------------------------------------
 
-// pending
+// pending ///
 
 function group(arr, num) {
   let newArr = [];
   for (let i = 0; i < arr.length; i += num) {
-    newArr.push(arr.slice(i, i + num));
+    newArr.push([]);
+  }
+  for (let j = 0; j < arr.length; j++) {
+    const index = j % newArr.length;
+    newArr[index].push(arr[j]);
   }
   return newArr;
 }
 
-// console.log(group([1, 2, 3, 4], 2)) // [[1, 3], [2, 4]]
-// console.log(group([1, 2, 3, 4, 5, 6, 7], 4)) // [[1, 3, 5, 7], [2, 4, 6]]
-// console.log(group([1, 2, 3, 4, 5], 1)) // [[1], [2], [3], [4], [5]]
-// console.log(group([1, 2, 3, 4, 5, 6], 4)) // [[1, 3, 5], [2, 4, 6]]
+// console.log(group([1, 2, 3, 4], 2)); // [[1, 3], [2, 4]]
+// console.log(group([1, 2, 3, 4, 5, 6, 7], 4)); // [[1, 3, 5, 7], [2, 4, 6]]
+// console.log(group([1, 2, 3, 4, 5], 1)); // [[1], [2], [3], [4], [5]]
+// console.log(group([1, 2, 3, 4, 5, 6], 4)); // [[1, 3, 5], [2, 4, 6]]
 
 // ------------------------------------------------
 
@@ -292,27 +313,40 @@ function letterCounter(arr, total) {
 //   )
 // ); // 2
 
-
 // -------------------------------------
 
 // pending
 
-function moveToEnd(arr,num){
-
+function moveToEnd(arr, targetElement) {
+  const newArr = [];
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === targetElement) {
+      total += 1;
+    } else {
+      newArr.push(arr[i]);
+    }
+  }
+  const repeatativeArray = Array(total).fill(targetElement);
+  return [...newArr, ...repeatativeArray];
 }
 
-console.log(moveToEnd([1, 3, 2, 4, 4, 1], 1)) // [3, 2, 4, 4, 1, 1]
+console.log(moveToEnd([1, 3, 2, 4, 4, 1], 1)); // [3, 2, 4, 4, 1, 1]
 // Move all the 1s to the end of the array.
-console.log(moveToEnd([7, 8, 9, 1, 2, 3, 4], 9)) // [7, 8, 1, 2, 3, 4, 9]
-console.log(moveToEnd(["a", "a", "a", "b"], "a")) // ["b", "a", "a", "a"]
+console.log(moveToEnd([7, 8, 9, 1, 2, 3, 4], 9)); // [7, 8, 1, 2, 3, 4, 9]
+console.log(moveToEnd(["a", "a", "a", "b"], "a")); // ["b", "a", "a", "a"]
 
 // -------------------------------------
 
-function magnitude(arr){
-  return Math.sqrt(arr.map(ele => ele ** 2).reduce((acc,curr)=> acc + curr,0))
+function magnitude(arr) {
+  return Math.sqrt(
+    arr.map((ele) => ele ** 2).reduce((acc, curr) => acc + curr, 0)
+  );
 }
 
 // console.log(magnitude([3, 4])) // 5
 // console.log(magnitude([0, 0, -10])) // 10
 // console.log(magnitude([])) // 0
 // console.log(magnitude([2, 3, 6, 1, 8] )) // 10.677078252031311
+
+// --------------------------------------
