@@ -354,4 +354,14 @@ function stackBoxes(n) {
 
 // console.log(centuryFromYear(1900)) // 19
 
-----
+// -----------------------------------------------------------
+function sumDigits(n1) {
+    let str = `${n1}` 
+    return str.length
+}
+
+// console.log(sumDigits(100)) // 3
+
+// console.log(sumDigits(1000)) // 4
+
+// console.log(sumDigits(1)) // 1
