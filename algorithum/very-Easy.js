@@ -84,9 +84,22 @@ function futurePeople(a, b) {
 
 // -----------------------------------------------------------
 
-// pending
+function leapYear(n) {
+  if(n % 4 == 0){
+    if(n % 100 == 0){
+      if(n % 400 == 0){
+        return true
+      }else{
+      return false
+      }
+    }else{
+      return true
+    }
+  }else{
+    return false
+  }
+}
 
-function leapYear(n) {}
 
 // console.log(leapYear(2020)) // true
 
@@ -169,9 +182,9 @@ function ctoa(str) {
 
 // -----------------------------------------------------------
 
-// panding
-
-function addBinary(n1, n2) {}
+function addBinary(n1, n2) {
+  return (n1 + n2).toString(2)
+}
 
 // console.log(addBinary(1, 1)) // "10"
 
@@ -229,9 +242,11 @@ function evenOrOdd(arr) {
 // console.log(evenOrOdd([0, 1, 5])) // "even"
 
 // -----------------------------------------------------------
-// pending
 
-function programmers(n1, n2, n3) {}
+
+function programmers(n1, n2, n3) {
+  return Math.max(n1,n2,n3) - Math.min(n1,n2,n3)
+}
 
 // console.log(programmers(147, 33, 526)) // 493
 
@@ -240,9 +255,11 @@ function programmers(n1, n2, n3) {}
 // console.log(programmers(1, 5, 9)) // 8
 
 // -----------------------------------------------------------
-// pending
 
-function areaOfHexagon(n1) {}
+function areaOfHexagon(n1) {
+  const area = (3 * Math.sqrt(3) * Math.pow(n1, 2)) / 2;
+  return area.toFixed(1)
+}
 
 // console.log(areaOfHexagon(1)) // 2.6
 
@@ -267,9 +284,14 @@ function sumCubes(n1) {
 // console.log(sumCubes(9)) // 2025
 
 // -----------------------------------------------------------
-// pending
 
-function nTablesPlusOne(n) {}
+function nTablesPlusOne(n) {
+  let str = '' 
+  for(let i = 1 ; i <= 10 ; i++){
+    str += (n) * i + 1 + ","
+   }
+  return str
+}
 
 // console.log(nTablesPlusOne(7)) // "8,15,22,29,36,43,50,57,64,71"
 
@@ -278,9 +300,10 @@ function nTablesPlusOne(n) {}
 // console.log(nTablesPlusOne(3)) // "4,7,10,13,16,19,22,25,28,31"
 
 // -----------------------------------------------------------
-// pending
 
-function ageDifference(n1, n2) {}
+function ageDifference(n1, n2) {
+  return Math.abs(n1 - (n2 * 2)) 
+}
 
 // console.log(ageDifference(36, 7)) // 22
 // 22 years from now, the father will be 58 years old and his son will be 29 years old.
@@ -393,12 +416,16 @@ function getDiscounts(arr, str) {
 // console.log(getDiscounts([100], "45%")) // [45]
 
 // -----------------------------------------------------------
-// pending
 
-function middleEarth(arr) {}
 
-// console.log(middleEarth(["Frodo", "Sam", "Gandalf"])) // true
+function middleEarth(arr) {
+ let sam = arr.indexOf("Sam")
+ let Frodo = arr.indexOf("Frodo")
+ return Math.abs(sam - Frodo) === 1
+}
 
-// console.log(middleEarth(["Frodo", "Saruman", "Sam"])) // false
+console.log(middleEarth(["Frodo", "Sam", "Gandalf"])) // true
 
-// console.log(middleEarth(["Orc", "Sam", "Frodo", "Legolas"])) // true
+console.log(middleEarth(["Frodo", "Saruman", "Sam"])) // false
+
+console.log(middleEarth(["Orc", "Sam", "Frodo", "Legolas"])) // true

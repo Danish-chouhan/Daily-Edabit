@@ -245,10 +245,10 @@ function filterStr(str) {
   return Math.max(...Object.values(obj)) > 1;
 }
 
-// console.log(filterUnique(["abb", "abc", "abcdb", "aea", "bbb"])) // ["abc"]
-// // // "b" occurs in "abb" more than once, "b" occurs in "abcdb" more than once, etc.
-// console.log(filterUnique(["88", "999", "989", "9988", "9898"])) // []
-// console.log(filterUnique(["ABCDE", "DDEB", "BED", "CCA", "BAC"])) // ["ABCDE", "BED", "BAC"]
+console.log(filterUnique(["abb", "abc", "abcdb", "aea", "bbb"])) // ["abc"]
+// // "b" occurs in "abb" more than once, "b" occurs in "abcdb" more than once, etc.
+console.log(filterUnique(["88", "999", "989", "9988", "9898"])) // []
+console.log(filterUnique(["ABCDE", "DDEB", "BED", "CCA", "BAC"])) // ["ABCDE", "BED", "BAC"]
 
 // ------------------------------------------------
 
